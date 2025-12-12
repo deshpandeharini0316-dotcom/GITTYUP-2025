@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Computer Science Student Portfolio">
+    <title>Portfolio | {{FULL_NAME}}</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">&lt;{{FULL_NAME}} /&gt;</div>
+        <ul class="nav-links">
+            <li><a href="#about">01. // About</a></li>
+            <li><a href="#skills">02. // Skills</a></li>
+            <li><a href="#projects">03. // Projects</a></li>
+            <li><a href="#contact">04. // Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <header id="hero">
+        <div class="container hero-content">
+            <p class="greeting">Hello, World. I am</p>
+            <h1 class="glitch-text">{{Harini Deshpande}}</h1>
+            <h2 class="role">{{Fresher}}</h2>
+            <div class="terminal-box">
+                <span class="prompt">user@dev:~$</span>
+                <span id="typewriter" class="type-text"></span><span class="cursor">_</span>
+            </div>
+            <a href="#projects" class="btn">View System Logs (Projects)</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">01. System Info</h2>
+                <div class="about-grid">
+                    <div class="bio">
+                        <h3>// User Bio</h3>
+                        <p>
+                            I am a {{DEGREE_MAJOR}} student at {{UNIVERSITY_NAME}} (Class of {{GRAD_YEAR}}).
+                            Passionate about building scalable systems and intuitive interfaces. 
+                            My focus is on efficiency, clean code, and solving complex algorithmic problems.
+                        </p>
+                        <div class="interests">
+                            <h4>// Interests.json</h4>
+                            <ul>
+                                <li>{{HOBBIES}}</li>
+                                <li>{{SOFT_SKILLS}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="education-card">
+                        <div class="card-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="card-body">
+                            <h4>{{UNIVERSITY_NAME}}</h4>
+                            <p class="degree">{{DEGREE_MAJOR}}</p>
+                            <p class="date">Exp. {{GRAD_YEAR}}</p>
+                            <p class="status">Status: <span class="accent">In Progress</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2 class="section-title">02. Tech Stack</h2>
+                <div class="skills-wrapper">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <p>{{PROGRAMMING_LANGUAGES}}</p>
+                        <div class="progress-bar"><div class="fill" style="width: 90%"></div></div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools & Frameworks</h3>
+                        <p>{{FRAMEWORKS_TOOLS}}</p>
+                        <div class="progress-bar"><div class="fill" style="width: 85%"></div></div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Core Concepts</h3>
+                        <p>{{CORE_CONCEPTS}}</p>
+                        <div class="progress-bar"><div class="fill" style="width: 95%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">03. Executed Programs</h2>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <div class="folder-tab">{{PROJECT_1_NAME}}</div>
+                        <div class="project-content">
+                            <p>{{PROJECT_1_DESC}}</p>
+                            <div class="project-links">
+                                <a href="#">Source Code</a>
+                                <a href="#">Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="folder-tab">{{PROJECT_2_NAME}}</div>
+                        <div class="project-content">
+                            <p>{{PROJECT_2_DESC}}</p>
+                            <div class="project-links">
+                                <a href="#">Source Code</a>
+                                <a href="#">Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="folder-tab">{{PROJECT_3_NAME}}</div>
+                        <div class="project-content">
+                            <p>{{PROJECT_3_DESC}}</p>
+                            <div class="project-links">
+                                <a href="#">Source Code</a>
+                                <a href="#">Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container text-center">
+                <h2 class="section-title">04. Initialize Handshake</h2>
+                <p>Currently looking for internships and new opportunities. Whether you have a question or just want to say hi, my inbox is always open.</p>
+                
+                <div class="social-links">
+                    <a href="{{GITHUB_URL}}" target="_blank" class="social-btn">GitHub</a>
+                    <a href="{{LINKEDIN_URL}}" target="_blank" class="social-btn">LinkedIn</a>
+                    <a href="mailto:{{EMAIL_ADDRESS}}" class="social-btn">Email</a>
+                </div>
+                
+                <p class="location">Location: {{LOCATION}}</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Built with pure HTML & CSS by {{FULL_NAME}}.</p>
+    </footer>
+
+    <script>
+        // 1. Mobile Menu Toggle
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('is-active');
+        });
+
+        // 2. Typewriter Effect
+        const text = "{{SHORT_TAGLINE}}"; // Variable from context
+        const typingElement = document.getElementById('typewriter');
+        let index = 0;
+
+        function typeWriter() {
+            if (index < text.length) {
+                typingElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100); // Speed of typing
+            }
+        }
+        
+        // Start typing when page loads
+        window.onload = typeWriter;
+    </script>
+</body>
+</html>
